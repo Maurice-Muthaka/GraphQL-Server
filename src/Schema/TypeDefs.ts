@@ -7,10 +7,12 @@ const typeDefs = gql`
     mass : String
     gender : String
     homeworld : String
+    url : String
   }
 
   type Query {
     people(search: String, page: Int) : [Person]
+    person(url: String!) : Person
   }
 `;
 
