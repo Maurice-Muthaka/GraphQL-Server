@@ -12,7 +12,7 @@ const typeDefs = gql`
 
   type Query {
     people(search: String, page: Int) : [Person]
-    person(url: String!) : Person
+    person(id: String) : Person
   }
 `;
 

@@ -13,9 +13,9 @@ const resolvers = {
             const { data } = await axios.get(`https://swapi.dev/api/people/?search=${search || ''}&page=${page || ''}`);
             return data.results
         },
-        person: async (parents:any, args: { url: String }) => {
-            const { url } = args;
-            const { data } = await axios.get(url);
+        person: async (parents:any, args: { id: String }) => {
+            const { id } = args;
+            const { data } = await axios.get(`https://swapi.dev/api/people/${id || '1'}`);
             return data
         }
     }
