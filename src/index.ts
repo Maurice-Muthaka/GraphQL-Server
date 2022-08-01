@@ -8,7 +8,11 @@ const { resolvers } = require("./Schema/Resolvers")
 const app = express();
 const port = process.env.PORT || 3001
 
-const server = new ApolloServer({ typeDefs, resolvers });
+const server = new ApolloServer({ 
+    typeDefs,
+    resolvers,
+    introspection: true
+});
 
 server.start().then(() => {
     server.applyMiddleware({ app });
