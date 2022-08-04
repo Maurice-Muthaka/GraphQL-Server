@@ -10,9 +10,15 @@ const typeDefs = gql`
     url : String
   }
 
+  type people {
+    next: String
+    previous: String
+    people: [Person]
+  }
+
   type Query {
-    people(search: String, page: Int) : [Person]
-    person(id: String) : Person
+    people(search: String, page: Int) : people
+    person(id: String!) : Person!
   }
 `;
 
